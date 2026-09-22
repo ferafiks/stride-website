@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="canonical" href="https://www.stride3d.net/blog/distant-worlds-2-development-with-stride/">
     <link rel="alternate" type="application/rss+xml" title="Stride Game Engine" href="/feed.xml">
-    <link rel="stylesheet" href="/css/styles.css?site-version=2.0.0.37">
+    <link rel="stylesheet" href="/css/styles.css?site-version=2.0.0.38">
     <link rel="preload" as="font" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
     <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
     <meta name="twitter:creator" content="@stridedotnet">
     <meta name="twitter:title" content="A Look Inside Distant Worlds 2: Developing with the Stride Engine">
     <meta name="twitter:description" content="[Distant Worlds 2](https://store.steampowered.com/app/1531540/Distant_Worlds_2/), the sequel to the acclaimed 4X strategy game [Distant Worlds: Universe](htt...">
-    <meta name="twitter:image" content="https://www.stride3d.net/images/blog/2025/distant-worlds-image.webp"><script src="/scripts/theme-selector.js?site-version=2.0.0.37"></script></head>
+    <meta name="twitter:image" content="https://www.stride3d.net/images/blog/2025/distant-worlds-image.webp"><script src="/scripts/theme-selector.js?site-version=2.0.0.38"></script></head>
 <body class="bg-stride-website d-flex flex-column min-vh-100"><nav class="navbar navbar-expand-xl bg-light-stride-website fixed-top">
     <div class="container-xxl">
         <a class="navbar-brand" href="/">
@@ -55,7 +55,6 @@
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-stride" href="/blog/">Blog</a></li>
-                        <li><a class="dropdown-item" href="/roadmap/">Roadmap</a></li>
                         <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
                         <li><a class="dropdown-item" href="/community/">Community</a></li>
                     </ul>
@@ -228,7 +227,8 @@ Stride’s approach to .NET has been a big plus. It’s quite amazing that we co
 <h4 id="how-is-the-research-screen-(e.g.%2C-item-order%2C-dependencies)-created%3F-are-these-elements-procedurally-generated%2C-or-are-they-manually-crafted%3F" tabindex="-1">How is the research screen (e.g., item order, dependencies) created? Are these elements procedurally generated, or are they manually crafted? <a class="direct-link" href="#how-is-the-research-screen-(e.g.%2C-item-order%2C-dependencies)-created%3F-are-these-elements-procedurally-generated%2C-or-are-they-manually-crafted%3F">🔗</a></h4>
 <h5 id="how-did-you-create-the-research-graph%2C-including-arrows-and-other-visual-elements%3F" tabindex="-1">How did you create the research graph, including arrows and other visual elements? <a class="direct-link" href="#how-did-you-create-the-research-graph%2C-including-arrows-and-other-visual-elements%3F">🔗</a></h5>
 <p>The Research screen is custom-rendered. Most of the data in DW2 is heavily moddable, and the tech trees are a big part of this. So the rendering for research projects has to be data-driven.</p>
-<p>We use some <code>SpriteBatch</code> helper classes to draw the lines and arrows between projects. The projects themselves use some basic textures for the main body.</p>
+<p>We use some <code>SpriteBatch</code> helper classes to draw the lines and arrows between projects. The projects themselves use some basic textures for the main body.<br>
+ </p>
 <h2 id="artists-and-asset-creation" tabindex="-1">Artists and Asset Creation <a class="direct-link" href="#artists-and-asset-creation">🔗</a></h2>
 <div class="text-center">
     <img alt="Distnat Worlds 2" src="/images/blog/2025/distant-worlds-image-2.gif" class="img-fluid mb-3" loading="lazy" data-src="/images/blog/2025/distant-worlds-image-2.gif">
@@ -297,7 +297,8 @@ Stride’s approach to .NET has been a big plus. It’s quite amazing that we co
 <p>Early on we made the decision to optimize the way weapons are rendered to minimize draw calls. So all weapon blasts in a scene are drawn in a single draw call using a custom shader that handles all of the different textures and animations for all the various weapon types.</p>
 <p>The rendering is wrapped into a single vertex buffer with camera-facing billboards for each weapon blast. The shader determines what to draw using a number of texture arrays that allow various rendering features, e.g. flipbook animations, scrolling beams, etc.</p>
 <p>This places some definite constraints on what we can render. We can’t just go crazy with expensive particle effects. But it has huge benefits for performance.</p>
-<p>Weapon trails are handled in a similar way, where a single vertex buffer contains all of the trail particles, and is rendered with a single draw call per frame.</p>
+<p>Weapon trails are handled in a similar way, where a single vertex buffer contains all of the trail particles, and is rendered with a single draw call per frame.<br>
+ </p>
 <h2 id="ai-and-game-systems" tabindex="-1">AI and Game Systems <a class="direct-link" href="#ai-and-game-systems">🔗</a></h2>
 <div class="text-center mb-3">
     <img alt="Distnat Worlds 2 UI" src="/images/blog/2025/distant-worlds-2-settings.webp" class="img-fluid mb-3" loading="lazy" data-src="/images/blog/2025/distant-worlds-2-settings.webp">
@@ -404,7 +405,6 @@ Stride’s approach to .NET has been a big plus. It’s quite amazing that we co
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="/features/" class="nav-link p-0 link-danger">Features</a></li>
                         <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 link-danger">Blog</a></li>
-                        <li class="nav-item mb-2"><a href="/roadmap/" class="nav-link p-0 link-danger">Roadmap</a></li>
                         <li class="nav-item mb-2"><a href="/download/" class="nav-link p-0 link-danger">Download</a></li>
                         <li class="nav-item mb-2"><a href="/legal/" class="nav-link p-0 link-danger">Legal</a></li>
                         <li class="nav-item mb-2"><a href="/contact/" class="nav-link p-0 link-danger">Contact us</a></li>
@@ -469,12 +469,11 @@ Stride’s approach to .NET has been a big plus. It’s quite amazing that we co
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 pb-4 text-center small">
                 <p class="text-light">Supported by the <a class="link-danger" href="https://dotnetfoundation.org/" target="_blank" rel="noopener">.NET Foundation</a></p>
-                <p class="text-light">Website v.2.0.0.37</p>
+                <p class="text-light">Website v.2.0.0.38</p>
                 <p class="text-light">© .NET Foundation and Contributors</p>
             </div>
         </footer>
     </div>
-</div>
-<script src="/scripts/bootstrap.bundle.min.js?site-version=2.0.0.37"></script>
+</div><script src="/scripts/bootstrap.bundle.min.js?site-version=2.0.0.38"></script>
 </body>
 </html>

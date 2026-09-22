@@ -7,26 +7,26 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());gtag('config', 'G-Y9CVGC9YV1');
 </script><meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Roadmap - Stride Game Engine</title>
-    <meta name="description" content="See what is currently being worked on and what you can expect to see in the future.">
+    <title>Announcing Stride 4.4 - Stride Game Engine</title>
+    <meta name="description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
     <meta name="generator" content="Eleventy v3.0.0">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="canonical" href="https://www.stride3d.net/roadmap/">
+    <link rel="canonical" href="https://www.stride3d.net/blog/announcing-stride-4-4/">
     <link rel="alternate" type="application/rss+xml" title="Stride Game Engine" href="/feed.xml">
-    <link rel="stylesheet" href="/css/styles.css?site-version=2.0.0.37">
+    <link rel="stylesheet" href="/css/styles.css?site-version=2.0.0.38">
     <link rel="preload" as="font" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Stride Game Engine">
-    <meta property="og:title" content="Roadmap">
-    <meta property="og:description" content="See what is currently being worked on and what you can expect to see in the future.">
-    <meta property="og:url" content="https://www.stride3d.net/roadmap/">
+    <meta property="og:title" content="Announcing Stride 4.4">
+    <meta property="og:description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
+    <meta property="og:url" content="https://www.stride3d.net/blog/announcing-stride-4-4/">
     <meta property="og:image" content="https://www.stride3d.net/images/og/stride-game-engine-default-og.jpg"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@stridedotnet">
     <meta name="twitter:creator" content="@stridedotnet">
-    <meta name="twitter:title" content="Roadmap">
-    <meta name="twitter:description" content="See what is currently being worked on and what you can expect to see in the future.">
-    <meta name="twitter:image" content="https://www.stride3d.net/images/og/stride-game-engine-default-og.jpg"><script src="/scripts/theme-selector.js?site-version=2.0.0.37"></script></head>
+    <meta name="twitter:title" content="Announcing Stride 4.4">
+    <meta name="twitter:description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
+    <meta name="twitter:image" content="https://www.stride3d.net/images/og/stride-game-engine-default-og.jpg"><script src="/scripts/theme-selector.js?site-version=2.0.0.38"></script></head>
 <body class="bg-stride-website d-flex flex-column min-vh-100"><nav class="navbar navbar-expand-xl bg-light-stride-website fixed-top">
     <div class="container-xxl">
         <a class="navbar-brand" href="/">
@@ -52,10 +52,9 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link active text-stride dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/blog/">Blog</a></li>
-                        <li><a class="dropdown-item text-stride" href="/roadmap/">Roadmap</a></li>
+                        <li><a class="dropdown-item text-stride" href="/blog/">Blog</a></li>
                         <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
                         <li><a class="dropdown-item" href="/community/">Community</a></li>
                     </ul>
@@ -147,96 +146,91 @@
         </div>
     </div>
 </nav>
-
-<div style="background-image: url(/images/backgrounds/faq.webp); background-position: 50% 50%; background-size: cover" class="header-image">
-    <div class="cover text-center py-5">
-        <p class="text-light pt-4 h1">Roadmap</p>
-        <p id="sub-title" class="text-light lead pb-3 px-2">The future of Stride</p>
-    </div>
-</div><div class="container-xxl my-5">
-    <div class="row">
+<div class="container">
+    <div class="row postcontent">
         <div class="col-12">
-            <div class="card">
-    <div class="card-body p-4">
-        <h2 class="h1">Why we don't have a roadmap</h2>
-        <p class="lead">Many people working on Stride do so in their free time and they mostly choose to focus on the areas they want to improve. This is why a roadmap with strict deadlines doesn't exist. However, if you are curious about the future of the engine, you can continue reading to learn about <b>current efforts</b> or check out the <b><a href="https://github.com/orgs/stride3d/projects/13" target="_blank">Roadmap project on GitHub</a></b>.</p>
-    </div>
-</div>
-<div class="card mt-5">
-    <div class="card-body p-4">
-        <h2 class="h1">Current efforts</h2>
-        <p class="lead">Here are some of the highlights of what the community is currently working on.</p>
-    </div>
-</div>
-<div class="card mt-4">
-    <div class="card-body p-4">
-        <div class="row">
-            <div class="col-lg-7">
-                <h3>Cross-platform editor (Avalonia rewrite)</h3>
-                <p class="lead">One of the biggest limitations of Stride lies in its editor, which is <b>only available on Windows</b>. It is possible to build games on Linux and MacOS, meaning that some non-editor related tasks can be accomplished on those platforms, but it's far less convenient to work on them without it.</p>
-                <p class="lead">Aside from not being cross-platform, Game Studio has many issues that are difficult to solve without <b>major changes to its architecture</b>, which is why it is being rewritten from the ground-up using <a href="https://avaloniaui.net" target="_blank">Avalonia</a>.</p>
-                <p class="lead">This is an enormous effort that will take a lot of time and effort, so if you are willing to help, <b>check out the <a href="https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?usp=sharing" target="_blank">white paper</a> and the <a href="https://github.com/orgs/stride3d/projects/6/" target="_blank">Avalonia Editor Rewrite project on GitHub</a>.</b></p>
-            </div>
-            <div class="col-lg-5">
-                <p class="text-center"><img class="img-fluid" src="/images/roadmap/gamestudio-avalonia.webp"/></p>
-                <p class="lead text-center"><i>Image of the Avalonia editor as of 16.07.2026</i></p>
-            </div>
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 itemprop="name">Announcing Stride 4.4</h1>
+                <div class="text-center mb-3 pt-2"><div><div class="mt-4 mb-2">
+                            <img class="rounded-circle me-1" width="58" height="58" alt="author" src="https://avatars.githubusercontent.com/VaclavElias?size=87">
+                        </div>Vaclav Elias
+                    </div><p style="border-top: 2px solid #979593;" class="x-hidden-focus mt-4 pt-1 small text-secondary date d-inline-block">
+                        <small><i class="fa-solid fa-calendar-days"></i> <time datetime="2026-11-14T00:00:00+0000" itemprop="datePublished"> November 14, 2026</time></small>
+                    </p>
+                </div><div itemprop="articleBody">
+                    <p>Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, NativeAOT/trimming readiness, and engine stability fixes.</p>
+<p>Table of Contents:</p>
+<div class="table-of-contents"><ul><li><a href="#download-and-upgrade">Download and Upgrade</a></li><li><a href="#what's-new-in-this-release">What's new in this release</a></li><li><a href="#what-has-changed-since-stride-4.3">What has changed since Stride 4.3</a></li><li><a href="#funding-and-resource-allocation">Funding and Resource Allocation</a><ul><li><a href="#call-for-skilled-developers">Call for Skilled Developers</a></li><li><a href="#join-us-on-this-journey">Join Us on This Journey</a></li></ul></li><li><a href="#links">Links</a></li><li><a href="#acknowledgements">Acknowledgements</a><ul><li><a href="#long-time-stride-supporters">Long-time Stride supporters</a></li><li><a href="#gold-striders">Gold Striders</a></li></ul></li></ul></div>
+<h2 id="download-and-upgrade" tabindex="-1">Download and Upgrade <a class="direct-link" href="#download-and-upgrade">🔗</a></h2>
+<p>You can <a href="https://www.stride3d.net/download/">download the Stride 4.4 Installer</a> today. Release notes are available <a href="https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html">here</a>.</p>
+<p>Make sure you read the <a href="https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html">guide to update Stride and projects properly</a>.</p>
+<h2 id="what's-new-in-this-release" tabindex="-1">What's new in this release <a class="direct-link" href="#what's-new-in-this-release">🔗</a></h2>
+<h2 id="what-has-changed-since-stride-4.3" tabindex="-1">What has changed since Stride 4.3 <a class="direct-link" href="#what-has-changed-since-stride-4.3">🔗</a></h2>
+<h2 id="funding-and-resource-allocation" tabindex="-1">Funding and Resource Allocation <a class="direct-link" href="#funding-and-resource-allocation">🔗</a></h2>
+<h3 id="call-for-skilled-developers" tabindex="-1">Call for Skilled Developers <a class="direct-link" href="#call-for-skilled-developers">🔗</a></h3>
+<p>We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are <a href="https://opencollective.com/stride3d/projects">opportunities to contribute</a> to critical areas of Stride's development, supported by available funds.</p>
+<h3 id="join-us-on-this-journey" tabindex="-1">Join Us on This Journey <a class="direct-link" href="#join-us-on-this-journey">🔗</a></h3>
+<p>We’re always excited to welcome new contributors to the Stride family. Whether it’s through code contributions, spreading the word, or donations, every bit helps us grow stronger. If you’ve got skills in .NET, Android, and iOS development, there’s a special place for you here. <a href="https://opencollective.com/stride3d">Support us on OpenCollective</a>.</p>
+<h2 id="links" tabindex="-1">Links <a class="direct-link" href="#links">🔗</a></h2>
+<ul>
+<li>GitHub: <a href="https://github.com/stride3d/stride">https://github.com/stride3d/stride</a></li>
+<li>Website: <a href="https://stride3d.net/">https://stride3d.net/</a></li>
+<li>Documentation: <a href="https://doc.stride3d.net/latest/en/manual/">https://doc.stride3d.net/latest/en/manual/</a></li>
+<li>Twitter: <a href="https://twitter.com/stridedotnet">https://twitter.com/stridedotnet</a></li>
+<li>YouTube: <a href="https://www.youtube.com/@Stride3D">https://www.youtube.com/@Stride3D</a></li>
+<li>Stride Community Toolkit: <a href="https://stride3d.github.io/stride-community-toolkit/index.html">https://stride3d.github.io/stride-community-toolkit/index.html</a></li>
+</ul>
+<h2 id="acknowledgements" tabindex="-1">Acknowledgements <a class="direct-link" href="#acknowledgements">🔗</a></h2>
+<p>We extend our heartfelt gratitude for all the hard work and donations we have received. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.</p>
+<p>In particular, we want to thank these donors:</p>
+<h3 id="long-time-stride-supporters" tabindex="-1">Long-time Stride supporters <a class="direct-link" href="#long-time-stride-supporters">🔗</a></h3>
+<ul>
+<li>
+<p><a href="https://visualprogramming.net/">VVVV</a>🥇</p>
+<p><a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a></p>
+</li>
+</ul>
+<h3 id="gold-striders" tabindex="-1">Gold Striders <a class="direct-link" href="#gold-striders">🔗</a></h3>
+<ul>
+<li><a href="https://www.happenstancegames.com/">Happenstance Games</a>🏆</li>
+<li><a href="https://www.vaclavelias.com/">Vašo ( Vaclav )</a>🥇</li>
+<li><a href="http://www.lucidsilence.org/">Lucid Silence Games</a>🥇</li>
+<li><a href="https://opencollective.com/widowmakes">WidowMakes</a>🥇</li>
+<li><a href="https://github.com/bepu/bepuphysics2">Norbo</a>🥇</li>
+<li><a href="https://opencollective.com/first-hour">First Hour</a>🥇</li>
+</ul>
+<p>This article was co-authored by <a href="https://github.com/Eideren">Eideren</a>.</p>
+
+                </div>
+                <hr>
+                <p>
+<span class="badge text-bg-stride text-stride me-1" style="--bs-bg-opacity: .20;">4.4</span><span class="badge text-bg-stride text-stride me-1" style="--bs-bg-opacity: .20;">Release</span></p>
+                <p>
+                    Any comments? You can start 🗨 at <i class="fa-brands fa-github text-decoration-none"></i> <a href="https://github.com/stride3d/stride/discussions" target="_blank" rel="noreferrer">GitHub Discussions</a> or <i class="fa-brands fa-discord text-decoration-none"></i> <a class="" href="https://discord.gg/f6aerfE" target="_blank" rel="noopener">Discord</a>.
+                </p>
+                <p>
+                    <a href="https://github.com/stride3d/stride-website/blob/master/./posts/2026-11-14-announcing-stride-4-4.md" target="_blank" rel="noreferrer">Edit</a> this page on
+                    <i class="fa-brands fa-github text-decoration-none"></i>.
+                </p>
+            </article>
         </div>
     </div>
-</div>
-<div class="card mt-4">
-    <div class="card-body p-4">
-        <div class="row flex-row-reverse">
-            <div class="col-lg-7">
-                <h3>Bringing old parts of the engine up-to-date</h3>
-                <p class="lead">When Stride was open-sourced, many of its parts were still <b>unfinished</b> or <b>needed significant changes</b> to ensure that they are fully working and stable. This is why today the majority of focus is put on fixing issues and modernizing legacy systems.</p>
-                <p class="lead">If you would like to help with this effort, <b>check out the <a href="https://doc.stride3d.net/latest/en/contributors/engine/index.html" target="_blank">contribute to the engine page</a>.</b></p>
+    <div class="row mb-4"><div class="col-md-6 mb-4">
+            
+            <div class="card px-3">
+                <div class="card-body p-4">
+                    <h5>Previous Post</h5>
+                    <a class="prev stretched-link" href="/blog/investigating-spirv-for-the-shader-system-part-4/">Investigating SPIR-V for the shader system - Part 4</a>
+                </div>
             </div>
-            <div class="col-lg-5">
-                <p class="text-center"><img class="img-fluid" src="/images/roadmap/new-code.webp"/></p>
-            </div>
+            
         </div>
-    </div>
-</div>
-<div class="card mt-4">
-    <div class="card-body p-4">
-        <div class="row">
-            <div class="col-lg-7">
-                <h3>Bringing the documentation up-to-date</h3>
-                <p class="lead">One of the most common criticisms of Stride is that its documentation is poor. A large portion of it <b>contains outdated or scattered information</b> which makes it difficult to use the engine without prior experience. This is why there is an ongoing effort to rewrite parts of the docs to make room for future content and update existing pages.</p>
-                <p class="lead">If you would like to help with this effort, <b>check out the <a href="https://doc.stride3d.net/latest/en/contributors/documentation/index.html" target="_blank">contribute to the docs page</a>.</b></p>
-            </div>
-            <div class="col-lg-5">
-                <p class="text-center"><img class="img-fluid" src="/images/roadmap/manual.webp"/></p>
-            </div>
+        <div class="col-md-6 text-md-end">
+            
         </div>
-    </div>
-</div>
-<div class="card mt-4">
-    <div class="card-body p-4">
-        <div class="row flex-row-reverse">
-            <div class="col-lg-7">
-                <h3>Allowing for code-only development with the community toolkit</h3>
-                <p class="lead">The <a href="https://github.com/stride3d/stride-community-toolkit/" target="_blank">community toolkit</a> is a collection of extension methods and addons that simplify development through code. One of it's main features is support for <b>code-only development</b>, meaning that you can make games using Stride without the use of the editor.</p>
-                <p class="lead">However, there are still many problems with code-only that make accomplishing certain tasks really difficult. Some of those problems require changes to the engine in order to provide openings for the community toolkit to use.</p>
-                <p class="lead">If you would like to help with this effort, <b>check out the <a href="https://stride3d.github.io/stride-community-toolkit/contributing/index.html" target="_blank">contributing section of the community toolkit docs</a>.</b></p>
-            </div>
-            <div class="col-lg-5">
-                <p class="text-center"><img class="img-fluid" src="/images/roadmap/community-toolkit.webp"/></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card mt-5">
-    <div class="card-body p-4">
-        <h2 class="h1">🌟 Wanna help?</h2>
-        <p class="lead">If you would like to support the development of Stride, consider <a href="https://opencollective.com/stride3d" target="_blank"><b>donating</b></a>, contributing code or other content. For more information, visit <a href="https://doc.stride3d.net/latest/en/contributors/index.html" target="_blank"><b>Ways to contribute</b></a>.</p>
     </div>
 </div>
 
-        </div>
-    </div>
-</div>
 <div class="bg-footer mt-auto">
     <div class="container">
         <footer class="pt-5 px-2">
@@ -246,7 +240,6 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="/features/" class="nav-link p-0 link-danger">Features</a></li>
                         <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 link-danger">Blog</a></li>
-                        <li class="nav-item mb-2"><a href="/roadmap/" class="nav-link p-0 link-danger">Roadmap</a></li>
                         <li class="nav-item mb-2"><a href="/download/" class="nav-link p-0 link-danger">Download</a></li>
                         <li class="nav-item mb-2"><a href="/legal/" class="nav-link p-0 link-danger">Legal</a></li>
                         <li class="nav-item mb-2"><a href="/contact/" class="nav-link p-0 link-danger">Contact us</a></li>
@@ -311,12 +304,11 @@
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 pb-4 text-center small">
                 <p class="text-light">Supported by the <a class="link-danger" href="https://dotnetfoundation.org/" target="_blank" rel="noopener">.NET Foundation</a></p>
-                <p class="text-light">Website v.2.0.0.37</p>
+                <p class="text-light">Website v.2.0.0.38</p>
                 <p class="text-light">© .NET Foundation and Contributors</p>
             </div>
         </footer>
     </div>
-</div>
-<script src="/scripts/bootstrap.bundle.min.js?site-version=2.0.0.37"></script>
+</div><script src="/scripts/bootstrap.bundle.min.js?site-version=2.0.0.38"></script>
 </body>
 </html>
