@@ -8,7 +8,7 @@
     gtag('js', new Date());gtag('config', 'G-Y9CVGC9YV1');
 </script><meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Announcing Stride 4.4 - Stride Game Engine</title>
-    <meta name="description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
+    <meta name="description" content="Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improv...">
     <meta name="generator" content="Eleventy v3.0.0">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="canonical" href="https://www.stride3d.net/blog/announcing-stride-4-4/">
@@ -19,14 +19,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Stride Game Engine">
     <meta property="og:title" content="Announcing Stride 4.4">
-    <meta property="og:description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
+    <meta property="og:description" content="Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improv...">
     <meta property="og:url" content="https://www.stride3d.net/blog/announcing-stride-4-4/">
-    <meta property="og:image" content="https://www.stride3d.net/images/og/stride-game-engine-default-og.jpg"><meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://www.stride3d.net/images/blog/release-4.4/post-cover.webp"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@stridedotnet">
     <meta name="twitter:creator" content="@stridedotnet">
     <meta name="twitter:title" content="Announcing Stride 4.4">
-    <meta name="twitter:description" content="Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, Nativ...">
-    <meta name="twitter:image" content="https://www.stride3d.net/images/og/stride-game-engine-default-og.jpg"><script src="/scripts/theme-selector.js?site-version=2.0.0.38"></script></head>
+    <meta name="twitter:description" content="Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improv...">
+    <meta name="twitter:image" content="https://www.stride3d.net/images/blog/release-4.4/post-cover.webp"><script src="/scripts/theme-selector.js?site-version=2.0.0.38"></script></head>
 <body class="bg-stride-website d-flex flex-column min-vh-100"><nav class="navbar navbar-expand-xl bg-light-stride-website fixed-top">
     <div class="container-xxl">
         <a class="navbar-brand" href="/">
@@ -152,25 +152,83 @@
             <article itemscope itemtype="http://schema.org/BlogPosting">
                 <h1 itemprop="name">Announcing Stride 4.4</h1>
                 <div class="text-center mb-3 pt-2"><div><div class="mt-4 mb-2">
-                            <img class="rounded-circle me-1" width="58" height="58" alt="author" src="https://avatars.githubusercontent.com/VaclavElias?size=87">
-                        </div>Vaclav Elias
+                            <img class="rounded-circle me-1" width="58" height="58" alt="author" src="https://avatars.githubusercontent.com/ferafiks?size=87">
+                        </div>ferafiks
                     </div><p style="border-top: 2px solid #979593;" class="x-hidden-focus mt-4 pt-1 small text-secondary date d-inline-block">
                         <small><i class="fa-solid fa-calendar-days"></i> <time datetime="2026-11-14T00:00:00+0000" itemprop="datePublished"> November 14, 2026</time></small>
                     </p>
                 </div><div itemprop="articleBody">
-                    <p>Stride 4.4 brings a modernized shader pipeline, broader cross-platform builds and testing, a new CLI workflow, stronger Vulkan and Direct3D 12 support, NativeAOT/trimming readiness, and engine stability fixes.</p>
+                    <p>Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improvements to non-Windows platform support, a new CLI tool and much more.</p>
 <p>Table of Contents:</p>
-<div class="table-of-contents"><ul><li><a href="#download-and-upgrade">Download and Upgrade</a></li><li><a href="#what's-new-in-this-release">What's new in this release</a></li><li><a href="#what-has-changed-since-stride-4.3">What has changed since Stride 4.3</a></li><li><a href="#funding-and-resource-allocation">Funding and Resource Allocation</a><ul><li><a href="#call-for-skilled-developers">Call for Skilled Developers</a></li><li><a href="#join-us-on-this-journey">Join Us on This Journey</a></li></ul></li><li><a href="#links">Links</a></li><li><a href="#acknowledgements">Acknowledgements</a><ul><li><a href="#long-time-stride-supporters">Long-time Stride supporters</a></li><li><a href="#gold-striders">Gold Striders</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#download-and-upgrade">Download and Upgrade</a></li><li><a href="#what's-new-in-this-release">What's new in this release</a><ul><li><a href="#%F0%9F%93%B1-platform-support">📱 Platform support</a></li><li><a href="#%F0%9F%8E%A8-overhaul-of-vulkan%2C-direct3d-12-and-sdsl">🎨 Overhaul of Vulkan, Direct3D 12 and SDSL</a></li><li><a href="#%E2%8C%A8%EF%B8%8F-new-stride-cli-tool">⌨️ New stride CLI tool</a></li><li><a href="#%F0%9F%93%A6-improved-asset-workflow">📦 Improved asset workflow</a></li><li><a href="#other-improvements">Other improvements</a></li></ul></li><li><a href="#ongoing-work-on-the-engine">Ongoing work on the engine</a><ul><li><a href="#cross-platform-editor-rewrite">Cross-platform editor rewrite</a></li><li><a href="#documentation">Documentation</a></li></ul></li><li><a href="#funding-and-resource-allocation">Funding and Resource Allocation</a><ul><li><a href="#call-for-skilled-developers">Call for Skilled Developers</a></li><li><a href="#join-us-on-this-journey">Join Us on This Journey</a></li></ul></li><li><a href="#links">Links</a></li><li><a href="#acknowledgements">Acknowledgements</a><ul><li><a href="#long-time-stride-supporters">Long-time Stride supporters</a></li><li><a href="#gold-striders">Gold Striders</a></li></ul></li></ul></div>
 <h2 id="download-and-upgrade" tabindex="-1">Download and Upgrade <a class="direct-link" href="#download-and-upgrade">🔗</a></h2>
-<p>You can <a href="https://www.stride3d.net/download/">download the Stride 4.4 Installer</a> today. Release notes are available <a href="https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html">here</a>.</p>
-<p>Make sure you read the <a href="https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html">guide to update Stride and projects properly</a>.</p>
+<p>You can download Stride 4.4 today from the <a href="https://www.stride3d.net/download/">launcher</a>. Release notes are available <a href="https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html">here</a>.</p>
 <h2 id="what's-new-in-this-release" tabindex="-1">What's new in this release <a class="direct-link" href="#what's-new-in-this-release">🔗</a></h2>
-<h2 id="what-has-changed-since-stride-4.3" tabindex="-1">What has changed since Stride 4.3 <a class="direct-link" href="#what-has-changed-since-stride-4.3">🔗</a></h2>
+<p>Here are just a few of the most notable changes. For a more detailed write-up, checkout the <a href="https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html">full release notes</a>.</p>
+<h3 id="%F0%9F%93%B1-platform-support" tabindex="-1">📱 Platform support <a class="direct-link" href="#%F0%9F%93%B1-platform-support">🔗</a></h3>
+<p>Up to this point, Stride has been a Windows-first engine. Other platforms <em>were</em> supported, but creating and running games on them would often lead to many problems. This update changes that.</p>
+<p><strong>All platforms have been brought back into shape</strong> and their test suite has been expanded to make sure they won't fall behind again. Additionally, with changes to the asset compiler, <strong>building projects on Linux and macOS</strong> now works the same <strong>as it does on Windows.</strong></p>
+<p><a href="/images/blog/release-4.4/ios.webp" title="A Stride sample running on a physical iPhone." class="mb-3"><img alt="A Stride sample running on a physical iPhone." src="/images/blog/release-4.4/ios.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/ios.webp"></a></p>
+<h3 id="%F0%9F%8E%A8-overhaul-of-vulkan%2C-direct3d-12-and-sdsl" tabindex="-1">🎨 Overhaul of Vulkan, Direct3D 12 and SDSL <a class="direct-link" href="#%F0%9F%8E%A8-overhaul-of-vulkan%2C-direct3d-12-and-sdsl">🔗</a></h3>
+<p>Stride's graphics API support was similar to platforms, as in you had a lot of options, but there was a clear winner that worked better than the rest. Direct3D 11 was the default API and was mostly feature complete, while Direct3D 12, Vulkan, OpenGL and OpenGLES <strong>were missing a lot of features</strong> and were generally <strong>less stable</strong>. This was especially noticeble on non-Windows platforms, where Direct3D 11 wasn't available.</p>
+<p>Stride 4.4 addresses this problem by <strong>completely overhauling Vulkan and Direct3D 12.</strong> You should now expect your projects to all work the same, no matter of your choice of a graphical backend. <strong>OpenGL and OpenGLES have been removed</strong> as we shift our focus to supporting only modern APIs for easier maintainability. We are also considering removing Direct3D 11 in the next major release.</p>
+<p>In addition to all of this, one of the other major changes with Stride 4.4 has been the <strong>overhaul of the SDSL compiler.</strong> Instead of stiching together text files, we now utilize a <a href="https://www.khronos.org/spirv/">SPIRV</a>-centric pipeline, where each SDSL shaders gets compiled only once and the engine then works with their bytecode directly.</p>
+<p><a href="/images/blog/release-4.4/sdsl-pipeline.webp" title="The new SDSL shader pipeline: many .sdsl shaders are parsed once into per-shader SPIR-S bytecode, .sdfx effects mix and compose them into standard SPIR-V, which feeds Vulkan natively and Direct3D and Metal via SPIRV-Cross." class="mb-3"><img alt="The new SDSL shader pipeline: many .sdsl shaders are parsed once into per-shader SPIR-S bytecode, .sdfx effects mix and compose them into standard SPIR-V, which feeds Vulkan natively and Direct3D and Metal via SPIRV-Cross." src="/images/blog/release-4.4/sdsl-pipeline.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/sdsl-pipeline.webp"></a></p>
+<p><strong>What this means for you:</strong></p>
+<ul>
+<li>Faster compilation times.</li>
+<li>Improved stability.</li>
+<li>Far-better support for advanced features.</li>
+<li>Easier for us to add modern enhancements in the future, such as ray tracing.</li>
+</ul>
+<h3 id="%E2%8C%A8%EF%B8%8F-new-stride-cli-tool" tabindex="-1">⌨️ New <code>stride</code> CLI tool <a class="direct-link" href="#%E2%8C%A8%EF%B8%8F-new-stride-cli-tool">🔗</a></h3>
+<p>Some tasks that previously required the use of <strong>Game Studio</strong> or the <strong>launcher</strong> can now be done directly <strong>from the command-line!</strong> By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.</p>
+<p>For more information, visit the <a href="../manual/get-started/stride-cli.md">Stride CLI</a> page of our documentation.</p>
+<pre class="language-bash"><code class="language-bash">dotnet tool <span class="token function">install</span> <span class="token parameter variable">-g</span> stride.cli      <span class="token comment"># Install Stride CLI</span>
+stride sdk <span class="token function">install</span>                     <span class="token comment"># Install the latest version of Stride</span>
+stride new topdownrpg <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> TopDownRPG <span class="token comment"># Create a project from a template</span>
+stride studio                          <span class="token comment"># Open it in Game Studio</span></code></pre>
+<p><code>dotnet new</code> templates are also available if you'd rather use the standard .NET tooling directly:</p>
+<pre class="language-bash"><code class="language-bash">dotnet new <span class="token function">install</span> Stride.Templates
+dotnet new stride-game <span class="token parameter variable">-n</span> MyGame</code></pre>
+<h3 id="%F0%9F%93%A6-improved-asset-workflow" tabindex="-1">📦 Improved asset workflow <a class="direct-link" href="#%F0%9F%93%A6-improved-asset-workflow">🔗</a></h3>
+<p>Working with asset paths in code has been made easier by the automatically generated <code>Assets</code> class, providing strongly typed URLs for all assets that are available in your project. Now instead of getting runtime &quot;content not found&quot; errors, you'll be able to <strong>catch missing assets at compile time.</strong></p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token comment">// Old approach</span>
+<span class="token class-name"><span class="token keyword">var</span></span> playerModel <span class="token operator">=</span> Content<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Load</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Model<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token string">"Models/Player"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// New approach</span>
+<span class="token class-name"><span class="token keyword">var</span></span> playerModel <span class="token operator">=</span> Content<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>Assets<span class="token punctuation">.</span>Models<span class="token punctuation">.</span>Player<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>There have been additional changes to improve support for multi-platform projects and external packages. Adding assets to root now defaults to using the project package that an asset belongs to instead of the current one (like <code>MyGame.Windows</code>), ensuring that <strong>your assets work the same across different builds.</strong> Game Studio now tells you the name of the project package where the asset will be root and allows you to choose from alternatives.</p>
+<p>TODO: IMAGE</p>
+<p>Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also now create <a href="https://doc.stride3d.net/latest/en/manual/assets/replacement-assets/index.html">replacement assets</a>, which allow you to override assets from external packages or even the engine itself.</p>
+<p><a href="/images/blog/release-4.4/replacement-assets.webp" title="Replacement assets can be used to override the default font used by Stride." class="mb-3"><img alt="Replacement assets can be used to override the default font used by Stride." src="/images/blog/release-4.4/replacement-assets.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/replacement-assets.webp"></a></p>
+<h3 id="other-improvements" tabindex="-1">Other improvements <a class="direct-link" href="#other-improvements">🔗</a></h3>
+<p>As mentioned previously, this update is too large to summarize in this blog post. For more information about what changed, you can read the full writeup in the <a href="https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html">release notes</a>.</p>
+<h2 id="ongoing-work-on-the-engine" tabindex="-1">Ongoing work on the engine <a class="direct-link" href="#ongoing-work-on-the-engine">🔗</a></h2>
+<h3 id="cross-platform-editor-rewrite" tabindex="-1">Cross-platform editor rewrite <a class="direct-link" href="#cross-platform-editor-rewrite">🔗</a></h3>
+<p>The cross-platform rewrite of Game Studio is still ongoing. For those unaware, we are currently porting the editor from WPF to Avalonia in order to enable future support for Linux and macOS. This is a massive endeavour that will take a lot of time and effort, so if you're willing to help, <strong>check out the <a href="https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?usp=sharing">white paper</a> and the <a href="https://github.com/orgs/stride3d/projects/6/">Avalonia Editor Rewrite project</a> on GitHub.</strong></p>
+<p>As part of this effort, we have recently updated the launcher which is now using Avalonia. Despite not being that different from its predecessor, the new launcher is still a big step for the eventual cross-platform editor support.</p>
+<p>TODO: IMAGE</p>
+<p>We also have one more announcement for Linux users looking to use the editor on their system today...</p>
+<h4 id="game-studio-can-now-run-on-linux-via-proton" tabindex="-1">Game Studio can now run on Linux via Proton <a class="direct-link" href="#game-studio-can-now-run-on-linux-via-proton">🔗</a></h4>
+<p>For a long time, Wine (and Proton) couldn't open Game Studio, due to legacy code that didn't want to play nice with compatibility layers. This has however changed in 4.4, after doing some cleanup in our codebase.</p>
+<p><a href="/images/blog/release-4.4/stride-proton.webp" title="Game Studio running on Linux." class="mb-3"><img alt="Game Studio running on Linux." src="/images/blog/release-4.4/stride-proton.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/stride-proton.webp"></a></p>
+<p>We know that this is not a perfect solution, but it's still a big step forward for Linux developers trying to use Stride. We have created a step-by-step guide in the documentation that should help you setup the editor on your machine.</p>
+<h3 id="documentation" tabindex="-1">Documentation <a class="direct-link" href="#documentation">🔗</a></h3>
+<p>Stride's documentation has always been one of its biggest weakpoints. Work on it has mostly been stale with not many people willing to write new pages or update existing content. However, this has recently changed.</p>
+<p>We are currently working on bringing the documentation up-to-date and restructuring it to support future content. So far, we have:</p>
+<ul>
+<li>Rewritten <a href="https://doc.stride3d.net/latest/en/manual/get-started/index.html">Get started</a>, <a href="https://doc.stride3d.net/latest/en/manual/graphics/graphics-api.html">Graphics API</a> and <a href="https://doc.stride3d.net/latest/en/manual/platforms/index.html">Platforms</a>.</li>
+<li>Added new sections <a href="https://doc.stride3d.net/latest/en/manual/assets/index.html">Assets</a>, <a href="https://doc.stride3d.net/latest/en/manual/install-and-update/index.html">Install and update</a> and <a href="https://doc.stride3d.net/latest/en/manual/files-and-folders/index.html">Project</a>.</li>
+<li>Created new pages for new features: <a href="https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.md">NativeAOT</a>, <a href="https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.md">Replacement assets</a> and <a href="https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.md">Stride CLI</a>.</li>
+<li>Removed outdated sections and pages.</li>
+</ul>
+<p>We have also started documenting parts of Stride's internal architecture in the main <a href="https://github.com/stride3d/stride/tree/master/docs">engine repository</a> to help other contributors navigate this large codebase. A copy of these pages is available on the <a href="https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.md">documentation website</a>.</p>
 <h2 id="funding-and-resource-allocation" tabindex="-1">Funding and Resource Allocation <a class="direct-link" href="#funding-and-resource-allocation">🔗</a></h2>
 <h3 id="call-for-skilled-developers" tabindex="-1">Call for Skilled Developers <a class="direct-link" href="#call-for-skilled-developers">🔗</a></h3>
 <p>We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are <a href="https://opencollective.com/stride3d/projects">opportunities to contribute</a> to critical areas of Stride's development, supported by available funds.</p>
 <h3 id="join-us-on-this-journey" tabindex="-1">Join Us on This Journey <a class="direct-link" href="#join-us-on-this-journey">🔗</a></h3>
-<p>We’re always excited to welcome new contributors to the Stride family. Whether it’s through code contributions, spreading the word, or donations, every bit helps us grow stronger. If you’ve got skills in .NET, Android, and iOS development, there’s a special place for you here. <a href="https://opencollective.com/stride3d">Support us on OpenCollective</a>.</p>
+<p>We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development on stride in the <a href="https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html">documentation</a>.</p>
 <h2 id="links" tabindex="-1">Links <a class="direct-link" href="#links">🔗</a></h2>
 <ul>
 <li>GitHub: <a href="https://github.com/stride3d/stride">https://github.com/stride3d/stride</a></li>
@@ -199,7 +257,6 @@
 <li><a href="https://github.com/bepu/bepuphysics2">Norbo</a>🥇</li>
 <li><a href="https://opencollective.com/first-hour">First Hour</a>🥇</li>
 </ul>
-<p>This article was co-authored by <a href="https://github.com/Eideren">Eideren</a>.</p>
 
                 </div>
                 <hr>
