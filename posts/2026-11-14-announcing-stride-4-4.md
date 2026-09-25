@@ -51,7 +51,7 @@ In addition to all of this, one of the other major changes with Stride 4.4 has b
 
 Some tasks that previously required the use of **Game Studio** or the **launcher** can now be done directly **from the command-line!** By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.
 
-For more information, visit the [Stride CLI](../manual/get-started/stride-cli.md) page of our documentation.
+For more information, visit the [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html) page of our documentation.
 
 ```bash
 dotnet tool install -g stride.cli      # Install Stride CLI
@@ -81,7 +81,7 @@ var playerModel = Content.Load(Assets.Models.Player);
 
 There have been additional changes to improve support for multi-platform projects and external packages. Adding assets to root now defaults to using the project package that an asset belongs to instead of the current one (like `MyGame.Windows`), ensuring that **your assets work the same across different builds.** Game Studio now tells you the name of the project package where the asset will be root and allows you to choose from alternatives.
 
-TODO: IMAGE
+{% img-click 'New context menu has multiple options of adding assets as root.' '/images/blog/release-4.4/new-include-in-root.webp' %}
 
 Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also now create [replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets/index.html), which allow you to override assets from external packages or even the engine itself.
 
@@ -99,7 +99,7 @@ The cross-platform rewrite of Game Studio is still ongoing. For those unaware, w
 
 As part of this effort, we have recently updated the launcher which is now using Avalonia. Despite not being that different from its predecessor, the new launcher is still a big step for the eventual cross-platform editor support.
 
-TODO: IMAGE
+{% img-click 'New launcher supports system theme and accent color.' '/images/blog/release-4.4/new-launcher.webp' %}
 
 We also have one more announcement for Linux users looking to use the editor on their system today...
 
@@ -119,10 +119,10 @@ We are currently working on bringing the documentation up-to-date and restructur
 
 * Rewritten [Get started](https://doc.stride3d.net/latest/en/manual/get-started/index.html), [Graphics API](https://doc.stride3d.net/latest/en/manual/graphics/graphics-api.html) and [Platforms](https://doc.stride3d.net/latest/en/manual/platforms/index.html).
 * Added new sections [Assets](https://doc.stride3d.net/latest/en/manual/assets/index.html), [Install and update](https://doc.stride3d.net/latest/en/manual/install-and-update/index.html) and [Project](https://doc.stride3d.net/latest/en/manual/files-and-folders/index.html).
-* Created new pages for new features: [NativeAOT](https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.md), [Replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.md) and [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.md).
+* Created new pages for new features: [NativeAOT](https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.html), [Replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.html) and [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html).
 * Removed outdated sections and pages.
 
-We have also started documenting parts of Stride's internal architecture in the main [engine repository](https://github.com/stride3d/stride/tree/master/docs) to help other contributors navigate this large codebase. A copy of these pages is available on the [documentation website](https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.md).
+We have also started documenting parts of Stride's internal architecture in the main [engine repository](https://github.com/stride3d/stride/tree/master/docs) to help other contributors navigate this large codebase. A copy of these pages is available on the [documentation website](https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.html).
 
 ## Funding and Resource Allocation
 
@@ -132,7 +132,7 @@ We are actively seeking skilled developers with experience in C#, the .NET ecosy
 
 ### Join Us on This Journey
 
-We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development on stride in the [documentation](https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html).
+We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development in the [documentation](https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html).
 
 ## Links
 
