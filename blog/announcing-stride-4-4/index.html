@@ -56,6 +56,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-stride" href="/blog/">Blog</a></li>
                         <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
+                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/community-resources/games-and-demos.html" target="_blank">Showcase</a></li>
                         <li><a class="dropdown-item" href="/community/">Community</a></li>
                     </ul>
                 </li>
@@ -183,7 +184,7 @@
 </ul>
 <h3 id="%E2%8C%A8%EF%B8%8F-new-stride-cli-tool" tabindex="-1">⌨️ New <code>stride</code> CLI tool <a class="direct-link" href="#%E2%8C%A8%EF%B8%8F-new-stride-cli-tool">🔗</a></h3>
 <p>Some tasks that previously required the use of <strong>Game Studio</strong> or the <strong>launcher</strong> can now be done directly <strong>from the command-line!</strong> By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.</p>
-<p>For more information, visit the <a href="../manual/get-started/stride-cli.md">Stride CLI</a> page of our documentation.</p>
+<p>For more information, visit the <a href="https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html">Stride CLI</a> page of our documentation.</p>
 <pre class="language-bash"><code class="language-bash">dotnet tool <span class="token function">install</span> <span class="token parameter variable">-g</span> stride.cli      <span class="token comment"># Install Stride CLI</span>
 stride sdk <span class="token function">install</span>                     <span class="token comment"># Install the latest version of Stride</span>
 stride new topdownrpg <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> TopDownRPG <span class="token comment"># Create a project from a template</span>
@@ -199,7 +200,7 @@ dotnet new stride-game <span class="token parameter variable">-n</span> MyGame</
 <span class="token comment">// New approach</span>
 <span class="token class-name"><span class="token keyword">var</span></span> playerModel <span class="token operator">=</span> Content<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span>Assets<span class="token punctuation">.</span>Models<span class="token punctuation">.</span>Player<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>There have been additional changes to improve support for multi-platform projects and external packages. Adding assets to root now defaults to using the project package that an asset belongs to instead of the current one (like <code>MyGame.Windows</code>), ensuring that <strong>your assets work the same across different builds.</strong> Game Studio now tells you the name of the project package where the asset will be root and allows you to choose from alternatives.</p>
-<p>TODO: IMAGE</p>
+<p><a href="/images/blog/release-4.4/new-include-in-root.webp" title="New context menu has multiple options of adding assets as root." class="mb-3"><img alt="New context menu has multiple options of adding assets as root." src="/images/blog/release-4.4/new-include-in-root.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/new-include-in-root.webp"></a></p>
 <p>Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also now create <a href="https://doc.stride3d.net/latest/en/manual/assets/replacement-assets/index.html">replacement assets</a>, which allow you to override assets from external packages or even the engine itself.</p>
 <p><a href="/images/blog/release-4.4/replacement-assets.webp" title="Replacement assets can be used to override the default font used by Stride." class="mb-3"><img alt="Replacement assets can be used to override the default font used by Stride." src="/images/blog/release-4.4/replacement-assets.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/replacement-assets.webp"></a></p>
 <h3 id="other-improvements" tabindex="-1">Other improvements <a class="direct-link" href="#other-improvements">🔗</a></h3>
@@ -208,7 +209,7 @@ dotnet new stride-game <span class="token parameter variable">-n</span> MyGame</
 <h3 id="cross-platform-editor-rewrite" tabindex="-1">Cross-platform editor rewrite <a class="direct-link" href="#cross-platform-editor-rewrite">🔗</a></h3>
 <p>The cross-platform rewrite of Game Studio is still ongoing. For those unaware, we are currently porting the editor from WPF to Avalonia in order to enable future support for Linux and macOS. This is a massive endeavour that will take a lot of time and effort, so if you're willing to help, <strong>check out the <a href="https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?usp=sharing">white paper</a> and the <a href="https://github.com/orgs/stride3d/projects/6/">Avalonia Editor Rewrite project</a> on GitHub.</strong></p>
 <p>As part of this effort, we have recently updated the launcher which is now using Avalonia. Despite not being that different from its predecessor, the new launcher is still a big step for the eventual cross-platform editor support.</p>
-<p>TODO: IMAGE</p>
+<p><a href="/images/blog/release-4.4/new-launcher.webp" title="New launcher supports system theme and accent color." class="mb-3"><img alt="New launcher supports system theme and accent color." src="/images/blog/release-4.4/new-launcher.webp" class="img-fluid" loading="lazy" data-src="/images/blog/release-4.4/new-launcher.webp"></a></p>
 <p>We also have one more announcement for Linux users looking to use the editor on their system today...</p>
 <h4 id="game-studio-can-now-run-on-linux-via-proton" tabindex="-1">Game Studio can now run on Linux via Proton <a class="direct-link" href="#game-studio-can-now-run-on-linux-via-proton">🔗</a></h4>
 <p>For a long time, Wine (and Proton) couldn't open Game Studio, due to legacy code that didn't want to play nice with compatibility layers. This has however changed in 4.4, after doing some cleanup in our codebase.</p>
@@ -220,15 +221,15 @@ dotnet new stride-game <span class="token parameter variable">-n</span> MyGame</
 <ul>
 <li>Rewritten <a href="https://doc.stride3d.net/latest/en/manual/get-started/index.html">Get started</a>, <a href="https://doc.stride3d.net/latest/en/manual/graphics/graphics-api.html">Graphics API</a> and <a href="https://doc.stride3d.net/latest/en/manual/platforms/index.html">Platforms</a>.</li>
 <li>Added new sections <a href="https://doc.stride3d.net/latest/en/manual/assets/index.html">Assets</a>, <a href="https://doc.stride3d.net/latest/en/manual/install-and-update/index.html">Install and update</a> and <a href="https://doc.stride3d.net/latest/en/manual/files-and-folders/index.html">Project</a>.</li>
-<li>Created new pages for new features: <a href="https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.md">NativeAOT</a>, <a href="https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.md">Replacement assets</a> and <a href="https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.md">Stride CLI</a>.</li>
+<li>Created new pages for new features: <a href="https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.html">NativeAOT</a>, <a href="https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.html">Replacement assets</a> and <a href="https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html">Stride CLI</a>.</li>
 <li>Removed outdated sections and pages.</li>
 </ul>
-<p>We have also started documenting parts of Stride's internal architecture in the main <a href="https://github.com/stride3d/stride/tree/master/docs">engine repository</a> to help other contributors navigate this large codebase. A copy of these pages is available on the <a href="https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.md">documentation website</a>.</p>
+<p>We have also started documenting parts of Stride's internal architecture in the main <a href="https://github.com/stride3d/stride/tree/master/docs">engine repository</a> to help other contributors navigate this large codebase. A copy of these pages is available on the <a href="https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.html">documentation website</a>.</p>
 <h2 id="funding-and-resource-allocation" tabindex="-1">Funding and Resource Allocation <a class="direct-link" href="#funding-and-resource-allocation">🔗</a></h2>
 <h3 id="call-for-skilled-developers" tabindex="-1">Call for Skilled Developers <a class="direct-link" href="#call-for-skilled-developers">🔗</a></h3>
 <p>We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are <a href="https://opencollective.com/stride3d/projects">opportunities to contribute</a> to critical areas of Stride's development, supported by available funds.</p>
 <h3 id="join-us-on-this-journey" tabindex="-1">Join Us on This Journey <a class="direct-link" href="#join-us-on-this-journey">🔗</a></h3>
-<p>We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development on stride in the <a href="https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html">documentation</a>.</p>
+<p>We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development in the <a href="https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html">documentation</a>.</p>
 <h2 id="links" tabindex="-1">Links <a class="direct-link" href="#links">🔗</a></h2>
 <ul>
 <li>GitHub: <a href="https://github.com/stride3d/stride">https://github.com/stride3d/stride</a></li>
