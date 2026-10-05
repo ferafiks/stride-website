@@ -42,17 +42,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/manual/" target="_blank" rel="noopener">📚 Manual (EN)</a></li>
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/jp/manual/" target="_blank" rel="noopener">📚 Manual (JP)</a></li>
+                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/manual/" target="_blank" rel="noopener">📚 Manual</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/tutorials/" target="_blank" rel="noopener">🎓 Tutorials</a></li>
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/releasenotes/" target="_blank" rel="noopener">📝 Release Notes</a></li>
+                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/ReleaseNotes/" target="_blank" rel="noopener">📝 Release Notes</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/contributors/index.html" target="_blank" rel="noopener">🌟 Contributing</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/api/" target="_blank" rel="noopener">🔧 API</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/community-resources/index.html" target="_blank" rel="noopener">🏋🏽 Community Resources</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <a class="nav-link active text-stride dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-stride" href="/blog/">Blog</a></li>
                         <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
@@ -165,12 +164,12 @@
 <h2 id="skeleton-asset" tabindex="-1">Skeleton asset <a class="direct-link" href="#skeleton-asset">🔗</a></h2>
 <p>A new Skeleton asset (*.xkskel) has been introduced. Both models and animations now hold a reference to a skeleton. This allows to reuse the same skeleton definition in multiple assets and to retarget models and animations to different skeletons.</p>
 <p>Skeletons can be created alongside other assets, when importing an FBX file or other model format.</p>
-<img alt="Skeleton Thumbnail" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/SkeletonThumbnail.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/SkeletonThumbnail.png">
+<img alt="Skeleton Thumbnail" src="https://doc.stride3d.net/en/release-notes/media/1.5/SkeletonThumbnail.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/SkeletonThumbnail.png">
 <h2 id="root-motion-support-for-models%2C-cameras%2C-lights%2C-etc." tabindex="-1">Root motion support for models, cameras, lights, etc. <a class="direct-link" href="#root-motion-support-for-models%2C-cameras%2C-lights%2C-etc.">🔗</a></h2>
 <p>Animations now apply root motion if they have no skeleton, or the ‘Root Motion’ property is enabled on the animation asset. The animation will then move the entity itself, instead of the skeleton’s root bone.<br>
 This is especially useful to import animations of lights, cameras or unskinned models, without the need to bind them to the bones of a skeleton.</p>
 <p>The FBX importer will now also import animations of various camera parameters (near-plane, far-plane, field of view) and apply them to the CameraComponent of the animated entity. More properties may be supported in the future.</p>
-<img alt="Root Motion Property" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/RootMotionProperty.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/RootMotionProperty.png">
+<img alt="Root Motion Property" src="https://doc.stride3d.net/en/release-notes/media/1.5/RootMotionProperty.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/RootMotionProperty.png">
 <h2 id="new-animation-update-system" tabindex="-1">New animation update system <a class="direct-link" href="#new-animation-update-system">🔗</a></h2>
 <p>The animation system now internally uses a new UpdateEngine to update objects. This allows us to animate arbitrary properties of entities, while accessing them in a highly efficient way.<br>
 It will be the foundation for a future animation curve editor inside the GameStudio.</p>
@@ -178,45 +177,45 @@ It will be the foundation for a future animation curve editor inside the GameStu
 <h2 id="simple-profiling-system" tabindex="-1">Simple Profiling system <a class="direct-link" href="#simple-profiling-system">🔗</a></h2>
 <p>It is now possible to visualize profiling information of all the game systems and custom profilers directly within your running games.<br>
 To get started, use the Game Profiler built-in script, attach it to an entity and when the game is running press LCtrl-LShift-P.</p>
-<img alt="Simple Profiling system" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/profiler.webp" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/profiler.webp">
+<img alt="Simple Profiling system" src="https://doc.stride3d.net/en/release-notes/media/1.5/profiler.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/profiler.png">
 <h2 id="physic-debug-shapes-at-runtime" tabindex="-1">Physic debug shapes at runtime <a class="direct-link" href="#physic-debug-shapes-at-runtime">🔗</a></h2>
 <p>It is now possible to enable the rendering of physics collider shapes during runtime.<br>
 The debug shapes are normal entities and they must be enabled for each physics shape that requires it.<br>
 The best way to start with this feature is to use the Physics Shapes Render built-in script and attach the script to any entity that has a Physics Component and when the game is running press LCtrl-LShift-P.</p>
-<img alt="Physic debug shapes" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/phys-debug.webp" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/phys-debug.webp">
+<img alt="Physic debug shapes" src="https://doc.stride3d.net/en/release-notes/media/1.5/phys-debug.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/phys-debug.png">
 <h2 id="asset-view" tabindex="-1">Asset View <a class="direct-link" href="#asset-view">🔗</a></h2>
 <p>The Asset view has been improved to help you better organize and manage your assets.</p>
 <h3 id="new-%E2%80%98view-options%E2%80%99-menu" tabindex="-1">New ‘view options’ menu <a class="direct-link" href="#new-%E2%80%98view-options%E2%80%99-menu">🔗</a></h3>
 <p>The view options are gathered in a single menu accessible from the asset view toolbar.</p>
-<img alt="Asset View Options" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AssetViewOptions.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AssetViewOptions.png">
+<img alt="Asset View Options" src="https://doc.stride3d.net/en/release-notes/media/1.5/AssetViewOptions.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/AssetViewOptions.png">
 <p>You can display all the assets in the current folder only, in the current folder and its sub-folder. The third option let you display the assets and the sub folders.</p>
 <p>You can also sort your assets by name, order, type or modification date.</p>
 <h3 id="new-asset-filter-bar" tabindex="-1">New asset filter bar <a class="direct-link" href="#new-asset-filter-bar">🔗</a></h3>
 <p>With the new asset filter bar, you can filter your assets by name, tag, type or a combination of those. Each ‘filter tag’ can be disabled by a single click or removed from the active filters.</p>
-<img alt="Asset Filter Bar" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AssetFilterBar.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AssetFilterBar.png">
+<img alt="Asset Filter Bar" src="https://doc.stride3d.net/en/release-notes/media/1.5/AssetFilterBar.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/AssetFilterBar.png">
 <p>To add a filter, type in the filter bar and matching filters will be displayed. Click on the one you want to add it to the list of active filters.</p>
-<img alt="Adding Asset Filter" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AddingAssetFilter.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/AddingAssetFilter.png">
+<img alt="Adding Asset Filter" src="https://doc.stride3d.net/en/release-notes/media/1.5/AddingAssetFilter.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/AddingAssetFilter.png">
 <p>Only the assets matching the active filters will be displayed in the asset view. Note that type filters are inclusive, while name and tag filters are exclusive.</p>
 <h3 id="folder-support-in-asset-view" tabindex="-1">Folder support in asset view <a class="direct-link" href="#folder-support-in-asset-view">🔗</a></h3>
 <p>If the ‘Assets and folder in selected folder’ options is selected, the first level of sub-folder will be displayed in the asset view. You can drag and drop assets inside them. You can also copy/paste complete folder structure.</p>
-<img alt="Folder Support" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/FolderSupport.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/FolderSupport.png">
+<img alt="Folder Support" src="https://doc.stride3d.net/en/release-notes/media/1.5/FolderSupport.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/FolderSupport.png">
 <h3 id="copy-paste-assets-with-their-dependencies" tabindex="-1">Copy-paste assets with their dependencies <a class="direct-link" href="#copy-paste-assets-with-their-dependencies">🔗</a></h3>
 <p>You have now the ability to copy assets with their dependencies. To do that use the new entry ‘Copy with dependencies’ from the asset view context menu, or press Ctrl+Shift+C.</p>
-<img alt="Copy Asset With Dependencies" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/CopyAssetWithDependencies.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/CopyAssetWithDependencies.png">
+<img alt="Copy Asset With Dependencies" src="https://doc.stride3d.net/en/release-notes/media/1.5/CopyAssetWithDependencies.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/CopyAssetWithDependencies.png">
 <p>For example, if you copy/paste a model with its dependencies, you will get a copy of this model along with a copy of all its dependencies (skeleton, materials, textures)</p>
 <h3 id="border-and-center-support-in-sprite-sheet-editor" tabindex="-1">Border and Center support in sprite sheet editor <a class="direct-link" href="#border-and-center-support-in-sprite-sheet-editor">🔗</a></h3>
-<p>For ‘Sprite2D’ sprites, you can move the position of the center by selecting the <img src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/SpriteCenterIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. Grab and move the cross to the desired position.</p>
-<p>For ‘UI’ sprites, you can change the borders by selecting the <img src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/SpriteBorderIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. You can then resize each border (left, top, right and bottom) separately in the same way as the texture region, by grabbing and moving one of them. Note that the <img src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/SpriteBorderLockIcon.png" style="display: inline" /> icon lets you ‘lock’or ‘unlock’ the sprite borders while resizing the texture region.</p>
+<p>For ‘Sprite2D’ sprites, you can move the position of the center by selecting the <img src="https://doc.stride3d.net/en/release-notes/media/1.5/SpriteCenterIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. Grab and move the cross to the desired position.</p>
+<p>For ‘UI’ sprites, you can change the borders by selecting the <img src="https://doc.stride3d.net/en/release-notes/media/1.5/SpriteBorderIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. You can then resize each border (left, top, right and bottom) separately in the same way as the texture region, by grabbing and moving one of them. Note that the <img src="https://doc.stride3d.net/en/release-notes/media/1.5/SpriteBorderLockIcon.png" style="display: inline" /> icon lets you ‘lock’or ‘unlock’ the sprite borders while resizing the texture region.</p>
 <h3 id="new-built-in-scripts" tabindex="-1">New built-in scripts <a class="direct-link" href="#new-built-in-scripts">🔗</a></h3>
 <p>We added a few more built-in scripts with this release such as an FPS camera script and First player controller script. To use them, just click on “New Asset”, “Script source code”, select the desired script and attach it to an adequate entity.</p>
-<img alt="Build in Scripts" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/built-in_Scripts.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/built-in_Scripts.png">
+<img alt="Build in Scripts" src="https://doc.stride3d.net/en/release-notes/media/1.5/built-in_Scripts.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/built-in_Scripts.png">
 <h3 id="precompiled-sprite-fonts" tabindex="-1">Precompiled Sprite Fonts <a class="direct-link" href="#precompiled-sprite-fonts">🔗</a></h3>
 <p>Font rights are quite restrictive and it is quite common that only some persons of the project have access to the font files. This was preventing some people to build the game.<br>
 To solve this problem, we created a new type of asset, the precompiled sprite fonts. It is an asset taking as input an image and containing all the glyph information required to render the set of character specified. Inside your games you can used it exactly like a standard sprite font.<br>
 To generate a precompiled sprite font, the owner of the original font file just have to right click on an existing static font and choose “Generate Precompiled Font”.</p>
-<img alt="Precompiled Sprite Font" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/PrecompiledSpriteFont.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/PrecompiledSpriteFont.png">
+<img alt="Precompiled Sprite Font" src="https://doc.stride3d.net/en/release-notes/media/1.5/PrecompiledSpriteFont.png" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.5/PrecompiledSpriteFont.png">
 <p>That’s all for us this year, folks! Have a great holiday season, and we will be back early next year for the next updates on Xenko!</p>
-<p>Note: For more details about the changes, see our <a href="http://doc.stride3d.net/1.5/ReleaseNotes.html">Release Notes</a>.</p>
+<p>Note: For more details about the changes, see our <a href="https://doc.stride3d.net/en/release-notes/1.5.html">Release Notes</a>.</p>
 
                 </div>
                 <hr>
@@ -275,7 +274,7 @@ To generate a precompiled sprite font, the owner of the original font file just 
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/manual/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Manual</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/tutorials/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Tutorials</a></li>
-                        <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/releasenotes/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Release notes</a></li>
+                        <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/ReleaseNotes/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Release notes</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/api/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Stride API</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/contributors/index.html" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Contributing</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/community-resources/index.html" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Community Resources</a></li>

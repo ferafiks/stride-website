@@ -42,17 +42,16 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/manual/" target="_blank" rel="noopener">📚 Manual (EN)</a></li>
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/jp/manual/" target="_blank" rel="noopener">📚 Manual (JP)</a></li>
+                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/manual/" target="_blank" rel="noopener">📚 Manual</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/tutorials/" target="_blank" rel="noopener">🎓 Tutorials</a></li>
-                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/releasenotes/" target="_blank" rel="noopener">📝 Release Notes</a></li>
+                        <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/ReleaseNotes/" target="_blank" rel="noopener">📝 Release Notes</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/contributors/index.html" target="_blank" rel="noopener">🌟 Contributing</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/api/" target="_blank" rel="noopener">🔧 API</a></li>
                         <li><a class="dropdown-item" href="https://doc.stride3d.net/latest/en/community-resources/index.html" target="_blank" rel="noopener">🏋🏽 Community Resources</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <a class="nav-link active text-stride dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-stride" href="/blog/">Blog</a></li>
                         <li><a class="dropdown-item" href="/faq/">FAQ</a></li>
@@ -169,14 +168,14 @@
 <h2 id="prefabs" tabindex="-1">Prefabs <a class="direct-link" href="#prefabs">🔗</a></h2>
 <p>Prefabs allow you to assemble entities into building blocks and easily reuse them in any of your scenes. Changes to your prefabs will be reflected on all instances (as long as properties are not overridden).</p>
 <p>We even took the concept one step further to empower our users, by having prefabs within prefabs, as well as the possibility to use only part of a prefab when you instantiate it. And of course, removing or rearranging a few entities won’t break your prefab synchronization!</p>
-<img alt="Prefabs" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/prefabs.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/prefabs.gif">
+<img alt="Prefabs" src="https://doc.stride3d.net/en/release-notes/media/1.6/prefabs.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.6/prefabs.gif">
 <h2 id="archetypes" tabindex="-1">Archetypes <a class="direct-link" href="#archetypes">🔗</a></h2>
 <p>You can now use any asset as an archetype for another asset. When you change a property of the archetype, the new value will be automatically propagated to all the derived assets, unless you specifically override them. Archetypes can be used with most asset types.</p>
-<img alt="Archetypes" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/assset-templating.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/assset-templating.gif">
+<img alt="Archetypes" src="https://doc.stride3d.net/en/release-notes/media/1.6/assset-templating.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.6/assset-templating.gif">
 <h2 id="particles" tabindex="-1">Particles <a class="direct-link" href="#particles">🔗</a></h2>
 <p>You can now create and edit particle systems directly in the Xenko Game Studio. Particles are deeply integrated in the game engine and leverage the powerful effect system and its high level of customization.</p>
 <p>While there are still several features on the roadmap, the current implementation is sufficient for most games. The ability to customize almost all aspects of the particle engine allows you to add features tailored to your game’s specific needs.</p>
-<img alt="Particles" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/particle1.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/particle1.gif">
+<img alt="Particles" src="https://doc.stride3d.net/en/release-notes/media/1.6/particle1.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.6/particle1.gif">
 <p>Feel free to visit our <a href="http://doc.stride3d.net/1.6/manual/particles/index.html">particle documentation</a>.</p>
 <h3 id="features" tabindex="-1">Features <a class="direct-link" href="#features">🔗</a></h3>
 <p>The particle engine supports many features out of the box:</p>
@@ -191,7 +190,7 @@
 <p>All aspects of particle systems are broken down into individuals modules like spawners, initializers and updaters, and each of these modules is easily tweakable and customizable. Check out the samples and the Xenko documentation for a detailed walkthrough.</p>
 <h3 id="curve-editor" tabindex="-1">Curve Editor <a class="direct-link" href="#curve-editor">🔗</a></h3>
 <p>The Game Studio now also comes with a built-in curve editor. For now only the particle engine uses curve animation. In the future, it will also power our property animation system and our storyboard system.</p>
-<img alt="Curve Editor" src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/particle2.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.6/particle2.gif">
+<img alt="Curve Editor" src="https://doc.stride3d.net/en/release-notes/media/1.6/particle2.gif" class="img-fluid mb-3" loading="lazy" data-src="https://doc.stride3d.net/en/release-notes/media/1.6/particle2.gif">
 <h2 id="new-graphics-engine" tabindex="-1">New Graphics Engine <a class="direct-link" href="#new-graphics-engine">🔗</a></h2>
 <p>Most of our graphics pipeline, both low-, medium- and high-level, has been almost completely rewritten, and should be ready for the future.</p>
 <p>The low-level API has been changed to more closely resemble DirectX 12 and Vulkan. For a list of breaking changes, please see below.</p>
@@ -373,7 +372,7 @@ You can create an EventKey from your sender scripts and consume events using <co
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/manual/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Manual</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/tutorials/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Tutorials</a></li>
-                        <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/releasenotes/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Release notes</a></li>
+                        <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/ReleaseNotes/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Release notes</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/api/" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Stride API</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/contributors/index.html" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Contributing</a></li>
                         <li class="nav-item mb-2"><a href="https://doc.stride3d.net/latest/en/community-resources/index.html" class="nav-link p-0 link-danger" target="_blank" rel="noopener">Community Resources</a></li>
